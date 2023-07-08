@@ -10,12 +10,10 @@ def index(request):
 
 #using generics:
 class MenuItemsView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]  #only authenticated users can see this view
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
 class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
